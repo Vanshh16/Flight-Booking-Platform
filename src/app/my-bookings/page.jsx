@@ -28,7 +28,7 @@ export default function BookingsPage() {
 
   return (
     <div className="w-full mx-auto">
-      <div className="bg-[url('/bg-home-2.jpg')] bg-cover bg-fixed min-h-screen w-full pt-28 px-4">
+      <div className="bg-[url('/bg-home-2.jpg')] bg-cover bg-fixed min-h-screen w-full pt-28 p-4">
         <h1 className="text-3xl font-semibold mx-auto mb-6 px-6 py-4 w-fit bg-black/30 backdrop-blur-sm rounded-md shadow-lg text-center drop-shadow-md">
           My Bookings
         </h1>

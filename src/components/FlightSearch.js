@@ -12,8 +12,8 @@ export default function FlightSearch({ onSearch }) {
   const [fromCityResults, setFromCityResults] = useState([]);
   const [toCityResults, setToCityResults] = useState([]);
 
-  const AMADEUS_CLIENT_ID = "tHpjTJGZlPnBGadCquoeRdn4xTt0aJrN";
-  const AMADEUS_CLIENT_SECRET = "MRtvtgXwSTjdeeLd";
+  const AMADEUS_CLIENT_ID = process.env.NEXT_PUBLIC_FLIGHT_API_KEY;
+  const AMADEUS_CLIENT_SECRET = process.env.NEXT_PUBLIC_FLIGHT_SECRET;
 
   useEffect(() => {
     const getAccessToken = async () => {
@@ -86,11 +86,11 @@ export default function FlightSearch({ onSearch }) {
   };
 
   return (
-    <div className="max-w-5xl mx-auto md:mr-36 p-6 mt-10 bg-transparent">
+    <div className="max-w-5xl mx-auto lg:mr-36 p-6 mt-10 bg-transparent">
       <h2 className="text-[1.5rem] md:text-4xl font-bold text-left text-gray-900 mb-6">
         Look for Flights <img className="h-14 md:h-28 inline" src="/plane.jpg" />
       </h2>
-      <div className="grid md:grid-cols-4 gap-10 md:gap-4">
+      <div className="grid lg:grid-cols-4 gap-10 md:gap-4">
         {/* From City */}
         <div className="relative px-4 py-2 md:px-6 md:py-3 bg-white/30 backdrop-blur-lg rounded-md shadow-lg w-full max-w-md mx-auto">
           <label className="flex items-center gap-2 text-base md:text-lg mb-3 font-semibold">
@@ -123,7 +123,7 @@ export default function FlightSearch({ onSearch }) {
         </div>
 
         {/* To City */}
-        <div className={`relative ${fromCityResults.length > 0 ? "-z-100" : ""} px-4 py-2 md:px-6 md:py-3 bg-white/30 backdrop-blur-lg rounded-md shadow-lg w-full max-w-md mx-auto`}>
+        <div className={`relative ${fromCityResults.length > 0 ? "-z-100" : ""} lg:-z-0 px-4 py-2 md:px-6 md:py-3 bg-white/30 backdrop-blur-lg rounded-md shadow-lg w-full max-w-md mx-auto`}>
           <label className="flex items-center gap-2 text-base md:text-lg mb-3 font-semibold">
             <MapPin className="w-4 h-4" /> TO
           </label>
@@ -153,7 +153,7 @@ export default function FlightSearch({ onSearch }) {
         </div>
 
         {/* Date */}
-        <div className={`${toCityResults.length > 0 ? "-z-100" : ""} px-4 py-2 md:px-6 md:py-3 bg-white/30 backdrop-blur-lg rounded-md shadow-lg w-full max-w-md mx-auto`}>
+        <div className={`${toCityResults.length > 0 ? "-z-100" : ""} lg:-z-0 px-4 py-2 md:px-6 md:py-3 bg-white/30 backdrop-blur-lg rounded-md shadow-lg w-full max-w-md mx-auto`}>
           <label className="flex items-center gap-2 text-base md:text-lg mb-3 font-semibold">
             {/* <CalendarDays className="w-4 h-4" /> */}
             DATE
@@ -165,9 +165,10 @@ export default function FlightSearch({ onSearch }) {
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-        <div className="px-6 py-3 bg-black/30 backdrop-blur-sm rounded-md shadow-lg w-1/2 max-w-md">
+        
+        <div className="lg:px-6 lg:py-3 bg-black/30 backdrop-blur-sm rounded-md shadow-lg w-1/2 max-w-md mx-auto">
           <button onClick={handleSearch} className="w-full h-full cursor-pointer">
-            <ArrowRight className="w-1/3 h-auto mx-auto" />
+            <ArrowRight className="w-1/3 h-10 lg:h-auto mx-auto" />
           </button>
         </div>
       </div>

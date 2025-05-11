@@ -36,7 +36,7 @@ export default function Home() {
         <AirplaneLoader />
       ) : (
         <div className="flex w-full min-h-screen bg-gray-50">
-          <div className="bg-[url('/bg-home-3.jpg')] bg-cover bg-fixed min-h-screen w-full p-4">
+          <div className="bg-[url('/bg-home-3.jpg')] bg-cover bg-fixed min-h-[115vh] w-full p-4">
             <div className="justify-center items-end w-full mt-40 flex flex-col text-left px-10 mr-0">
               <h1 className="text-4xl md:text-7xl font-bold md:mb-4 md:w-1/2">
                 Your Journey Starts Here!

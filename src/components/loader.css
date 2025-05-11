@@ -1,0 +1,53 @@
+/* loader.css */
+
+/* Animation for flying right */
+@keyframes fly-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animation for flying left */
+@keyframes fly-left {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animation for flying up and down */
+@keyframes fly-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Add animation classes */
+.airplane-fly-right {
+  animation: fly-right 2s ease-in-out infinite;
+}
+
+.airplane-fly-left {
+  animation: fly-left 2s ease-in-out infinite;
+}
+
+.airplane-fly-up-down {
+  animation: fly-up-down 2s ease-in-out infinite;
+}
